@@ -25,10 +25,12 @@ SECRET_KEY = "django-insecure-^u=^7pw^*h*fsl2up7))9&=a9p(*7sbyo&farljfh01smxgt^4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
+
+THIRD_PARTY_APPS = [
+    "rest_framework",
+]
 
 CUSTOM_APPS = [
     "users.apps.UsersConfig",
@@ -51,7 +53,7 @@ SYSTEM_APPS = [
     "django.contrib.staticfiles",
 ]
 
-INSTALLED_APPS = CUSTOM_APPS + SYSTEM_APPS
+INSTALLED_APPS = SYSTEM_APPS + THIRD_PARTY_APPS + CUSTOM_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -136,9 +138,7 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-ALLOWED_HOSTS = ["0.0.0.0", "milkymilkycode.com"]
-ALLOWED_HOSTS = ["0.0.0.0", "175.45.192.146"]
-
+ALLOWED_HOSTS = ["*"]
 
 # AUTH
 
